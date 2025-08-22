@@ -12,7 +12,13 @@ function useLocalStorage(key, initialValue) { const [value, setValue] = useState
 
 function useNow(tickMs = 1000) { const [now, setNow] = useState(new Date()); useEffect(() => { const id = setInterval(() => setNow(new Date()), tickMs); return () => clearInterval(id); }, [tickMs]); return now; }
 
-function countdownString(target, now) { const diff = target - now; if (diff <= 0) return "00:00"; const m = Math.floor(diff / 60000); const s = Math.floor((diff % 60000) / 1000); return ${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}; }
+function countdownString(target, now) {
+  const diff = target - now;
+  if (diff <= 0) return "00:00";
+  const m = Math.floor(diff / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
 
 function useAuth() { const [user, setUser] = useLocalStorage("mvp_user", null); const login = async (email) => { await new Promise((r) => setTimeout(r, 350)); setUser({ id: crypto.randomUUID(), email, coins: 120 }); return true; }; const logout = () => setUser(null); return { user, login, logout }; }
 
