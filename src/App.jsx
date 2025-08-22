@@ -6,13 +6,13 @@ import React, { useEffect, useState } from "react";
 const THEME = {
   brandName: "Na Estrada com os Pinguins",
   colors: {
-    bg: "bg-black",
+    bg: "bg-zinc-950",
     text: "text-white",
     accent: "text-purple-500",
     accentBg: "bg-purple-600",
     accent2: "text-yellow-400",
     accent2Bg: "bg-yellow-400",
-    card: "bg-black",
+    card: "bg-zinc-950",
     border: "border-zinc-800",
     muted: "text-zinc-300",
   },
