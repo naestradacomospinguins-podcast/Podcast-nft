@@ -12,7 +12,7 @@ const THEME = {
     accentBg: "bg-purple-600",
     accent2: "text-yellow-400",
     accent2Bg: "bg-yellow-400",
-    card: "bg-zinc-900",
+    card: "bg-black",
     border: "border-zinc-800",
     muted: "text-zinc-300",
   },
