@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 const THEME = {
   brandName: "Na Estrada com os Pinguins",
   colors: {
-    bg: "bg-zinc-950",
+    bg: "bg-[#1D1B19]",
     text: "text-white",
     accent: "text-purple-500",
     accentBg: "bg-purple-600",
