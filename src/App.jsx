@@ -12,7 +12,7 @@ const THEME = {
     accentBg: "bg-purple-600",
     accent2: "text-yellow-400",
     accent2Bg: "bg-yellow-400",
-    card: "bg-zinc-950",
+    card: "bg-[#1D1B19]",
     border: "border-zinc-800",
     muted: "text-zinc-300",
   },
@@ -161,7 +161,7 @@ function NavBtn({ label, active, onClick }) {
 function Footer() {
   const c = THEME.colors;
   return (
-    <div className={`border-t ${c.border} bg-zinc-950 ${c.text}`}>
+    <div className={`border-t ${c.border} ${THEME.colors.bg} ${c.text}`}>
       <Container className="py-6 text-sm flex flex-wrap items-center gap-4 justify-between">
         <div>© {new Date().getFullYear()} {THEME.brandName}</div>
         <div className="flex gap-2">
@@ -394,7 +394,7 @@ function AuthGate({ user, onLogin }) {
   if (user) return null;
   return (
     <Container>
-      <div className="max-w-md mx-auto mt-8 border border-zinc-800 rounded-2xl overflow-hidden bg-zinc-950 text-white">
+      <div className={`max-w-md mx-auto mt-8 border border-zinc-800 rounded-2xl overflow-hidden ${THEME.colors.card} ${THEME.colors.text}`}>
         <div className="p-4 border-b border-zinc-800">
           <div className="text-lg font-semibold">Entre para continuar</div>
           <div className="text-sm text-zinc-400">Login por e-mail (OTP simulado). Depois trocamos por Clerk/Auth.js.</div>
@@ -432,7 +432,7 @@ export default function App() {
   }, [route]);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className={`min-h-screen ${THEME.colors.bg} ${THEME.colors.text}`}>
       <Navbar route={route} setRoute={setRoute} user={user} logout={logout} />
       {!user && <AuthGate user={user} onLogin={login} />}
       {route === "/home" && <HomeLogo />}
